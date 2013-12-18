@@ -45,7 +45,11 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
+<<<<<<< HEAD
     browsers: ["IE"],
+=======
+    browsers: ["Chrome"],
+>>>>>>> e34bd7e50ed95eb6e879d5d0079ee5906e9c08e0
 
     // If browser does not capture in given timeout [ms], kill it
     captureTimeout: 20000,
@@ -56,7 +60,11 @@ module.exports = function(config) {
 
     plugins: [
       "karma-jasmine",
+<<<<<<< HEAD
       "karma-ie-launcher"
+=======
+      "karma-chrome-launcher"
+>>>>>>> e34bd7e50ed95eb6e879d5d0079ee5906e9c08e0
     ]
   });
 };
