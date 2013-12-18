@@ -1,0 +1,15 @@
+{
+  "name": "EC5Shim",
+  "version": "0.1.0",
+  "author": "Matt Wistrand",
+  "private": true,
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-jasmine": "*",
+    "grunt-contrib-watch": "*",
+    "matchdep": "*",
+    "grunt-karma": "~0.6.2"
+  }
+}
