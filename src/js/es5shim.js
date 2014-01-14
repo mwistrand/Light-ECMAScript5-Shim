@@ -126,4 +126,16 @@ if (!Object.create) {
   })();
 }
 
+if (!Function.prototype.bind) {
+  Function.prototype.bind = function(bind) {
+    var method = this,
+      slice = [].slice,
+      args = slice.call(arguments, 1);
+
+    return function() {
+      return method.apply(bind || null, args.concat(slice.call(arguments)));
+    };
+  };
+}
+
 })();

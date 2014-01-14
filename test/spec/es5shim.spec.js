@@ -226,4 +226,38 @@ describe('ECMAScript 5 Shim', function() {
       expect(indexes.join(',')).toEqual('3,2,1,0');
     });
   });
+
+  describe('Function.prototype.bind', function() {
+    var obj = {
+      fakeProp: 'test'
+    };
+
+    it('returns the value of calling the original function', function() {
+      var toBind = function() {
+        return true;
+      }.bind(obj);
+
+      expect(toBind()).toBeDefined();
+    });
+
+    it('binds `this` to the passed-in value', function() {
+      var toBind = function() {
+        return this.fakeProp;
+      }.bind(obj);
+
+      expect(toBind()).toEqual('test');
+    });
+
+    it('passes in arguments to the returned function', function() {
+      var toBind = function() {
+        var added = [].slice.call(arguments).reduce(function(sum, n) {
+          return n ? sum + n : 0;
+        }, 0);
+
+        return added + 5;
+      }.bind(obj, 1, 2, 3);
+
+      expect(toBind()).toEqual(11);
+    });
+  });
 });
